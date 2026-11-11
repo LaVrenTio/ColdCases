@@ -99,10 +99,42 @@ function render(){
 function tick(){document.querySelectorAll(".elapsed[data-date]").forEach(el=>el.innerHTML=elapsed(el.dataset.date))}
 $("langBtn").addEventListener("click",()=>{lang=lang==="it"?"en":"it";applyText()});
 ["search","country","category"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",render));
-const EMBEDDED_CASES = [{"id":"emanuela-orlandi","country":"Italia","country_en":"Italy","name":"Emanuela Orlandi","category":"Scomparsa","category_en":"Disappearance","date":"1983-06-22T00:00:00+02:00","location":"Città del Vaticano / Roma","location_en":"Vatican City / Rome","summary":"Emanuela Orlandi, quindicenne cittadina vaticana, scomparve a Roma il 22 giugno 1983. La vicenda è ancora oggetto di indagini e iniziative istituzionali.","summary_en":"Emanuela Orlandi, a 15-year-old Vatican citizen, disappeared in Rome on 22 June 1983. The case remains the subject of investigations and institutional inquiries.","source":"https://www.bbc.com/news/world-europe-64219445","source_label":"BBC News","timer_basis":"disappearance","timer_label":"Tempo dalla scomparsa","timer_label_en":"Time since disappearance","status":"Caso irrisolto","status_en":"Unresolved case"},{"id":"madeleine-mccann","country":"Portogallo","country_en":"Portugal","name":"Madeleine McCann","category":"Scomparsa","category_en":"Disappearance","date":"2007-05-03T00:00:00+01:00","location":"Praia da Luz, Algarve","location_en":"Praia da Luz, Algarve","summary":"Madeleine McCann, di tre anni, scomparve il 3 maggio 2007 durante una vacanza con la famiglia a Praia da Luz. Le autorità britanniche e portoghesi hanno proseguito le indagini.","summary_en":"Three-year-old Madeleine McCann disappeared on 3 May 2007 while on holiday with her family in Praia da Luz. British and Portuguese authorities have continued investigating.","source":"https://www.met.police.uk/operation-grange/","source_label":"Metropolitan Police","timer_basis":"disappearance","timer_label":"Tempo dalla scomparsa","timer_label_en":"Time since disappearance","status":"Caso irrisolto","status_en":"Unresolved case"},{"id":"db-cooper","country":"Stati Uniti","country_en":"United States","name":"D. B. Cooper","category":"Scomparsa / dirottamento","category_en":"Disappearance / hijacking","date":"1971-11-24T00:00:00-08:00","location":"Stato di Washington","location_en":"Washington State","summary":"Il 24 novembre 1971 un uomo che si presentò come Dan Cooper dirottò un aereo, ottenne un riscatto e si lanciò con il paracadute. La sua identità e il suo destino restano sconosciuti.","summary_en":"On 24 November 1971, a man using the name Dan Cooper hijacked an aircraft, collected a ransom and parachuted away. His identity and fate remain unknown.","source":"https://www.fbi.gov/history/famous-cases/db-cooper-hijacking","source_label":"FBI","timer_basis":"hijacking","timer_label":"Tempo dal dirottamento","timer_label_en":"Time since hijacking","status":"Cold case non attivamente investigato","status_en":"Cold case – no longer actively investigated"},{"id":"woman-in-the-well","country":"Belgio","country_en":"Belgium","name":"The Woman in the Well","category":"Identità sconosciuta","category_en":"Unidentified person","date":"1991-08-06T00:00:00+02:00","timer_basis":"discovery","timer_label":"Tempo dal ritrovamento","timer_label_en":"Time since discovery","location":"Holsbeek, Attenhovendreef","location_en":"Holsbeek, Attenhovendreef","summary":"Il 6 agosto 1991 fu trovato il corpo di una donna in un pozzo di raccolta dell’acqua piovana ad Attenhovendreef, Holsbeek. La sua identità resta sconosciuta. La data stimata del decesso è compresa tra agosto 1989 e agosto 1991.","summary_en":"On 6 August 1991, a woman’s body was found in a rainwater well on Attenhovendreef in Holsbeek. Her identity remains unknown. Her estimated date of death is between August 1989 and August 1991.","source":"https://www.interpol.int/What-you-can-do/Identify-Me/Countries-in-which-the-bodies-were-found/Women-found-in-Belgium/BE01-The-woman-in-the-well","source_label":"INTERPOL","status":"Identità non accertata","status_en":"Identity unknown"},{"id":"body-in-the-bog","country":"Germania","country_en":"Germany","name":"The Body in the Bog","category":"Identità sconosciuta","category_en":"Unidentified person","date":"2001-10-14T00:00:00+02:00","timer_basis":"discovery","timer_label":"Tempo dal ritrovamento","timer_label_en":"Time since discovery","location":"Worringer Bruch, Colonia","location_en":"Worringer Bruch, Cologne","summary":"Il 14 ottobre 2001 un cercatore di funghi trovò il corpo di una donna nella zona paludosa di Worringer Bruch, a Colonia. L’identità resta sconosciuta. La causa della morte non fu determinata e non fu possibile escludere un reato.","summary_en":"On 14 October 2001, a mushroom picker found a woman’s body in the Worringer Bruch bog area in Cologne. Her identity remains unknown. The cause of death could not be established and a crime could not be ruled out.","source":"https://www.interpol.int/en/What-you-can-do/Identify-Me/Countries-in-which-the-bodies-were-found/Women-found-in-Germany/DE01-The-body-in-the-bog","source_label":"INTERPOL","status":"Identità non accertata","status_en":"Identity unknown"},{"id":"woman-mount-artxanda","country":"Spagna","country_en":"Spain","name":"The Woman of Mount Artxanda","category":"Identità sconosciuta","category_en":"Unidentified person","date":"2009-02-06T00:00:00+01:00","timer_basis":"discovery","timer_label":"Tempo dal ritrovamento","timer_label_en":"Time since discovery","location":"Monte Artxanda, Bilbao","location_en":"Mount Artxanda, Bilbao","summary":"Il corpo di una donna fu trovato il 6 febbraio 2009 vicino a un sentiero boschivo sul monte Artxanda, a Bilbao. L’identità resta sconosciuta. La data stimata del decesso è il 3 febbraio 2009.","summary_en":"A woman’s body was found on 6 February 2009 near a forest path on Mount Artxanda in Bilbao. Her identity remains unknown. Her estimated date of death is 3 February 2009.","source":"https://www.interpol.int/What-you-can-do/Identify-Me/Countries-in-which-the-bodies-were-found/Women-found-in-Spain/ES01-The-woman-of-Mount-Artxanda","source_label":"INTERPOL","status":"Identità non accertata","status_en":"Identity unknown"}];
-cases = EMBEDDED_CASES;
-applyText();
-tick();
+
+async function loadCases() {
+  try {
+    const response = await fetch('./cases.json');
+
+    if (!response.ok) {
+      throw new Error('Errore HTTP: ' + response.status);
+    }
+
+    const data = await response.json();
+
+    if (!Array.isArray(data)) {
+      throw new Error('Il database JSON non contiene un array valido');
+    }
+
+    cases = data;
+
+    applyText();
+    tick();
+    setInterval(tick, 1000);
+
+  } catch (error) {
+    console.error('Errore caricamento database:', error);
+
+    $("caseGrid").innerHTML =
+      '<div class="empty">Impossibile caricare il database dei casi. Riprova più tardi.</div>';
+
+    $("caseCount").textContent = "0";
+    $("countryCount").textContent = "0";
+  }
+}
+
+$("year").textContent = new Date().getFullYear();
+
+loadCases();
+
 setInterval(tick,1000);
 $("year").textContent=new Date().getFullYear();
 </script>
