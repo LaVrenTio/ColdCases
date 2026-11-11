@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="ColdCases.it — Archivio bilingue di casi irrisolti nel mondo.">
+<title>ColdCases.it — The World's Open Cases</title>
+<style>
+:root{--bg:#0b0e12;--panel:#131922;--panel2:#18212c;--line:#273342;--text:#edf2f7;--muted:#9ba9b8;--red:#d74747;--red2:#8e292e;--gold:#d9b46a}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 70% -15%,#26313d 0,transparent 45%),var(--bg);color:var(--text);font:16px/1.55 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:#f08a8a;text-decoration:none}a:hover{text-decoration:underline}.wrap{max-width:1180px;margin:auto;padding:0 22px}
+header{border-bottom:1px solid var(--line);background:#0b0e12eF;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:900;letter-spacing:.08em;font-size:21px}.brand span{color:var(--red)}.tag{font-size:10px;letter-spacing:.22em;color:var(--muted);display:block;margin-top:-4px}
+.actions{display:flex;align-items:center;gap:10px}.lang,button,select,input{font:inherit}.lang{border:1px solid var(--line);background:var(--panel);color:var(--text);padding:8px 12px;border-radius:7px;cursor:pointer}
+.hero{padding:72px 0 42px;display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center}.eyebrow{color:var(--red);font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase}.hero h1{font-size:clamp(38px,6vw,68px);line-height:1.02;letter-spacing:-.045em;margin:14px 0}.hero p{color:var(--muted);max-width:650px;font-size:17px}.hero-mark{border:1px solid var(--line);background:linear-gradient(145deg,#1a222c,#10151c);border-radius:14px;padding:25px;min-height:190px;display:flex;flex-direction:column;justify-content:space-between}.hero-mark .stamp{font-size:12px;color:var(--red);letter-spacing:.2em;font-weight:800}.hero-mark strong{font-size:30px;line-height:1.1;max-width:260px}.hero-mark small{color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0 38px}.stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:17px}.stat b{font-size:27px;display:block}.stat span{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin:38px 0 18px}.section-head h2{font-size:25px;margin:0}.section-head p{color:var(--muted);margin:4px 0 0;font-size:13px}
+.filters{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:10px;margin-bottom:18px}.filters input,.filters select{width:100%;background:var(--panel);border:1px solid var(--line);color:var(--text);padding:12px 13px;border-radius:8px;outline:none}.filters input:focus,.filters select:focus{border-color:var(--red)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.case{background:linear-gradient(160deg,var(--panel),#10151c);border:1px solid var(--line);border-radius:12px;padding:19px;display:flex;flex-direction:column;min-height:310px}.case-top{display:flex;justify-content:space-between;gap:10px;align-items:center}.country{font-size:11px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}.status{font-size:10px;color:#ffb4b4;border:1px solid #71373b;background:#3b1c20;padding:4px 7px;border-radius:4px;white-space:nowrap}.case h3{font-size:21px;margin:15px 0 2px}.place{color:var(--muted);font-size:12px}.timer{margin:17px 0 12px;padding:12px;background:#0b1016;border:1px solid #293440;border-radius:8px}.timer-label{color:var(--muted);font-size:10px;letter-spacing:.13em;text-transform:uppercase}.elapsed{font-variant-numeric:tabular-nums;font-size:19px;font-weight:800;letter-spacing:.02em;color:#f0c0c0;margin-top:3px}.elapsed small{font-size:11px;color:var(--muted);font-weight:500}.case p{color:#c1cbd5;font-size:13px;margin:4px 0 18px}.case-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted)}.kind{color:var(--gold)}
+.note{margin:34px 0;padding:17px;border-left:3px solid var(--gold);background:#171a1d;color:var(--muted);font-size:12px}.empty{padding:35px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:10px;grid-column:1/-1}
+footer{border-top:1px solid var(--line);margin-top:55px;padding:25px 0 38px;color:var(--muted);font-size:12px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:850px){.hero{grid-template-columns:1fr;padding-top:48px}.hero-mark{min-height:150px}.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.nav{height:66px}.hero{padding-top:38px}.stats{grid-template-columns:1fr 1fr}.stats .stat:last-child{grid-column:1/-1}.filters{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:5px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <div><div class="brand">COLDCASES<span>.IT</span></div><span class="tag">THE WORLD'S OPEN CASES</span></div>
+  <div class="actions"><button class="lang" id="langBtn" type="button">ENGLISH</button></div>
+</div></header>
+<main class="wrap">
+<section class="hero">
+ <div><div class="eyebrow" data-i18n="eyebrow">ARCHIVIO INTERNAZIONALE · CASI IRRISOLTI</div>
+ <h1 data-i18n="headline">Le storie che<br>aspettano risposte.</h1>
+ <p data-i18n="intro">Un archivio consultabile di scomparse, omicidi e misteri ancora senza soluzione. Ogni caso è accompagnato da una cronologia e da fonti verificabili.</p></div>
+ <div class="hero-mark"><span class="stamp">CASE FILE / 001</span><strong data-i18n="manifesto">La memoria è il primo passo verso la verità.</strong><small data-i18n="submanifesto">Documentare. Verificare. Non dimenticare.</small></div>
+</section>
+<section class="stats">
+ <div class="stat"><b id="caseCount">06</b><span data-i18n="statCases">Casi in archivio</span></div>
+ <div class="stat"><b id="countryCount">06</b><span data-i18n="statCountries">Paesi rappresentati</span></div>
+ <div class="stat"><b>IT / EN</b><span data-i18n="statLang">Archivio bilingue</span></div>
+</section>
+<section>
+ <div class="section-head"><div><div class="eyebrow" data-i18n="directory">DATABASE</div><h2 data-i18n="titleCases">Casi irrisolti</h2><p data-i18n="subCases">Esplora l'archivio e consulta il tempo trascorso.</p></div></div>
+ <div class="filters">
+  <input id="search" type="search" placeholder="Cerca un caso, una città..." aria-label="Search">
+  <select id="country"><option value="">Tutti i paesi</option></select>
+  <select id="category"><option value="">Tutte le categorie</option></select>
+ </div>
+ <div class="grid" id="caseGrid" aria-live="polite"></div>
+</section>
+<div class="note"><strong data-i18n="editorialTitle">Nota editoriale</strong><br><span data-i18n="editorial">Questo è un prototipo iniziale, non un censimento completo dei casi irrisolti. Le date indicano l'inizio noto della vicenda (scomparsa o evento) e non implicano che ogni caso abbia la stessa definizione giuridica. I contatori partono dalla data dell’evento indicato nella scheda (scomparsa, dirottamento o ritrovamento). Quando l’ora non è documentata, il calcolo usa convenzionalmente la mezzanotte locale. Le informazioni vanno verificate e aggiornate sulle fonti ufficiali.</span></div>
+</main>
+<footer><div class="wrap foot"><span>© <span id="year"></span> ColdCases.it powered by Malvets</span><span data-i18n="footer">Archivio indipendente · Le persone prima dei casi</span></div></footer>
+<script>
+const I18N={
+ it:{eyebrow:"ARCHIVIO INTERNAZIONALE · CASI IRRISOLTI",headline:"Le storie che<br>aspettano risposte.",intro:"Un archivio consultabile di scomparse, omicidi e misteri ancora senza soluzione. Ogni caso è accompagnato da una cronologia e da fonti verificabili.",manifesto:"La memoria è il primo passo verso la verità.",submanifesto:"Documentare. Verificare. Non dimenticare.",statCases:"Casi in archivio",statCountries:"Paesi rappresentati",statLang:"Archivio bilingue",directory:"DATABASE",titleCases:"Casi irrisolti",subCases:"Esplora l'archivio e consulta il tempo trascorso.",allCountries:"Tutti i paesi",allCategories:"Tutte le categorie",search:"Cerca un caso, una città...",open:"CASO IRRISOLTO",since:"TEMPO TRASCORSO",days:"giorni",hours:"ore",minutes:"min",seconds:"sec",source:"Fonte",noResults:"Nessun caso corrisponde alla ricerca.",editorialTitle:"Nota editoriale",editorial:"Questo è un prototipo iniziale, non un censimento completo dei casi irrisolti. Le date indicano l'inizio noto della vicenda (scomparsa o evento) e non implicano che ogni caso abbia la stessa definizione giuridica. I contatori partono dalla data dell’evento indicato nella scheda (scomparsa, dirottamento o ritrovamento). Quando l’ora non è documentata, il calcolo usa convenzionalmente la mezzanotte locale. Le informazioni vanno verificate e aggiornate sulle fonti ufficiali.",footer:"Archivio indipendente · Le persone prima dei casi"},
+ en:{eyebrow:"INTERNATIONAL ARCHIVE · UNSOLVED CASES",headline:"Stories still<br>waiting for answers.",intro:"A searchable archive of disappearances, murders and mysteries that remain unresolved. Each case includes a timeline and verifiable sources.",manifesto:"Memory is the first step toward the truth.",submanifesto:"Document. Verify. Remember.",statCases:"Cases in archive",statCountries:"Countries represented",statLang:"Bilingual archive",directory:"DATABASE",titleCases:"Unsolved cases",subCases:"Explore the archive and see how much time has passed.",allCountries:"All countries",allCategories:"All categories",search:"Search a case or a city...",open:"UNRESOLVED CASE",since:"TIME ELAPSED",days:"days",hours:"hrs",minutes:"min",seconds:"sec",source:"Source",noResults:"No cases match your search.",editorialTitle:"Editorial note",editorial:"This is an initial prototype, not a complete census of unresolved cases. Dates indicate the known start of the case (disappearance or event) and do not imply that every case has the same legal status. Counters start from the event date specified in each case (disappearance, hijacking or discovery). When the exact time is undocumented, local midnight is used as a convention. Information should be checked and updated against official sources.",footer:"Independent archive · People before cases"}
+};
+let lang="it", cases=[];
+const $=id=>document.getElementById(id);
+function elapsed(date){
+ const s=Math.max(0,Math.floor((Date.now()-new Date(date).getTime())/1000));
+ const d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60),sec=s%60;
+ return `${d.toLocaleString()} <small>${I18N[lang].days}</small> · ${String(h).padStart(2,"0")}<small>${I18N[lang].hours}</small> ${String(m).padStart(2,"0")}<small>${I18N[lang].minutes}</small> ${String(sec).padStart(2,"0")}<small>${I18N[lang].seconds}</small>`;
+}
+function applyText(){
+ document.documentElement.lang=lang;
+ document.querySelectorAll("[data-i18n]").forEach(el=>{const k=el.dataset.i18n;el.innerHTML=I18N[lang][k]});
+ $("langBtn").textContent=lang==="it"?"ENGLISH":"ITALIANO";
+ $("search").placeholder=I18N[lang].search;
+ fillFilters();render();
+}
+function fillFilters(){
+ const oldC=$("country").value,oldK=$("category").value;
+ const countries=[...new Set(cases.map(c=>lang==="it"?c.country:c.country_en))].sort();
+ const cats=[...new Set(cases.map(c=>lang==="it"?c.category:c.category_en))].sort();
+ $("country").innerHTML=`<option value="">${I18N[lang].allCountries}</option>`+countries.map(x=>`<option>${x}</option>`).join("");
+ $("category").innerHTML=`<option value="">${I18N[lang].allCategories}</option>`+cats.map(x=>`<option>${x}</option>`).join("");
+ if(countries.includes(oldC))$("country").value=oldC;if(cats.includes(oldK))$("category").value=oldK;
+}
+function render(){
+ const q=$("search").value.toLocaleLowerCase();
+ const country=$("country").value,category=$("category").value;
+ const filtered=cases.filter(c=>{
+  const cn=lang==="it"?c.country:c.country_en,cat=lang==="it"?c.category:c.category_en;
+  return (!country||cn===country)&&(!category||cat===category)&&[c.name,cn,cat,c.location,c.location_en].join(" ").toLocaleLowerCase().includes(q);
+ });
+ $("caseCount").textContent=String(cases.length).padStart(2,"0");
+ $("countryCount").textContent=String(new Set(cases.map(c=>c.country)).size).padStart(2,"0");
+ $("caseGrid").innerHTML=filtered.length?filtered.map(c=>{
+  const cn=lang==="it"?c.country:c.country_en,cat=lang==="it"?c.category:c.category_en;
+  const loc=lang==="it"?c.location:c.location_en,summary=lang==="it"?c.summary:c.summary_en;
+  const status=lang==="it"?(c.status||I18N[lang].open):(c.status_en||I18N[lang].open);
+  const timerLabel=lang==="it"?(c.timer_label||I18N[lang].since):(c.timer_label_en||I18N[lang].since);
+  return `<article class="case"><div class="case-top"><span class="country">${cn}</span><span class="status">${status}</span></div><h3>${c.name}</h3><div class="place">${loc}</div><div class="timer"><div class="timer-label">${timerLabel}</div><div class="elapsed" data-date="${c.date}">${elapsed(c.date)}</div></div><p>${summary}</p><div class="case-foot"><span class="kind">${cat}</span><a href="${c.source}" target="_blank" rel="noopener noreferrer">${I18N[lang].source}: ${c.source_label} ↗</a></div></article>`;
+ }).join(""):`<div class="empty">${I18N[lang].noResults}</div>`;
+}
+function tick(){document.querySelectorAll(".elapsed[data-date]").forEach(el=>el.innerHTML=elapsed(el.dataset.date))}
+$("langBtn").addEventListener("click",()=>{lang=lang==="it"?"en":"it";applyText()});
+["search","country","category"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",render));
+const EMBEDDED_CASES = [{"id":"emanuela-orlandi","country":"Italia","country_en":"Italy","name":"Emanuela Orlandi","category":"Scomparsa","category_en":"Disappearance","date":"1983-06-22T00:00:00+02:00","location":"Città del Vaticano / Roma","location_en":"Vatican City / Rome","summary":"Emanuela Orlandi, quindicenne cittadina vaticana, scomparve a Roma il 22 giugno 1983. La vicenda è ancora oggetto di indagini e iniziative istituzionali.","summary_en":"Emanuela Orlandi, a 15-year-old Vatican citizen, disappeared in Rome on 22 June 1983. The case remains the subject of investigations and institutional inquiries.","source":"https://www.bbc.com/news/world-europe-64219445","source_label":"BBC News","timer_basis":"disappearance","timer_label":"Tempo dalla scomparsa","timer_label_en":"Time since disappearance","status":"Caso irrisolto","status_en":"Unresolved case"},{"id":"madeleine-mccann","country":"Portogallo","country_en":"Portugal","name":"Madeleine McCann","category":"Scomparsa","category_en":"Disappearance","date":"2007-05-03T00:00:00+01:00","location":"Praia da Luz, Algarve","location_en":"Praia da Luz, Algarve","summary":"Madeleine McCann, di tre anni, scomparve il 3 maggio 2007 durante una vacanza con la famiglia a Praia da Luz. Le autorità britanniche e portoghesi hanno proseguito le indagini.","summary_en":"Three-year-old Madeleine McCann disappeared on 3 May 2007 while on holiday with her family in Praia da Luz. British and Portuguese authorities have continued investigating.","source":"https://www.met.police.uk/operation-grange/","source_label":"Metropolitan Police","timer_basis":"disappearance","timer_label":"Tempo dalla scomparsa","timer_label_en":"Time since disappearance","status":"Caso irrisolto","status_en":"Unresolved case"},{"id":"db-cooper","country":"Stati Uniti","country_en":"United States","name":"D. B. Cooper","category":"Scomparsa / dirottamento","category_en":"Disappearance / hijacking","date":"1971-11-24T00:00:00-08:00","location":"Stato di Washington","location_en":"Washington State","summary":"Il 24 novembre 1971 un uomo che si presentò come Dan Cooper dirottò un aereo, ottenne un riscatto e si lanciò con il paracadute. La sua identità e il suo destino restano sconosciuti.","summary_en":"On 24 November 1971, a man using the name Dan Cooper hijacked an aircraft, collected a ransom and parachuted away. His identity and fate remain unknown.","source":"https://www.fbi.gov/history/famous-cases/db-cooper-hijacking","source_label":"FBI","timer_basis":"hijacking","timer_label":"Tempo dal dirottamento","timer_label_en":"Time since hijacking","status":"Cold case non attivamente investigato","status_en":"Cold case – no longer actively investigated"},{"id":"woman-in-the-well","country":"Belgio","country_en":"Belgium","name":"The Woman in the Well","category":"Identità sconosciuta","category_en":"Unidentified person","date":"1991-08-06T00:00:00+02:00","timer_basis":"discovery","timer_label":"Tempo dal ritrovamento","timer_label_en":"Time since discovery","location":"Holsbeek, Attenhovendreef","location_en":"Holsbeek, Attenhovendreef","summary":"Il 6 agosto 1991 fu trovato il corpo di una donna in un pozzo di raccolta dell’acqua piovana ad Attenhovendreef, Holsbeek. La sua identità resta sconosciuta. La data stimata del decesso è compresa tra agosto 1989 e agosto 1991.","summary_en":"On 6 August 1991, a woman’s body was found in a rainwater well on Attenhovendreef in Holsbeek. Her identity remains unknown. Her estimated date of death is between August 1989 and August 1991.","source":"https://www.interpol.int/What-you-can-do/Identify-Me/Countries-in-which-the-bodies-were-found/Women-found-in-Belgium/BE01-The-woman-in-the-well","source_label":"INTERPOL","status":"Identità non accertata","status_en":"Identity unknown"},{"id":"body-in-the-bog","country":"Germania","country_en":"Germany","name":"The Body in the Bog","category":"Identità sconosciuta","category_en":"Unidentified person","date":"2001-10-14T00:00:00+02:00","timer_basis":"discovery","timer_label":"Tempo dal ritrovamento","timer_label_en":"Time since discovery","location":"Worringer Bruch, Colonia","location_en":"Worringer Bruch, Cologne","summary":"Il 14 ottobre 2001 un cercatore di funghi trovò il corpo di una donna nella zona paludosa di Worringer Bruch, a Colonia. L’identità resta sconosciuta. La causa della morte non fu determinata e non fu possibile escludere un reato.","summary_en":"On 14 October 2001, a mushroom picker found a woman’s body in the Worringer Bruch bog area in Cologne. Her identity remains unknown. The cause of death could not be established and a crime could not be ruled out.","source":"https://www.interpol.int/en/What-you-can-do/Identify-Me/Countries-in-which-the-bodies-were-found/Women-found-in-Germany/DE01-The-body-in-the-bog","source_label":"INTERPOL","status":"Identità non accertata","status_en":"Identity unknown"},{"id":"woman-mount-artxanda","country":"Spagna","country_en":"Spain","name":"The Woman of Mount Artxanda","category":"Identità sconosciuta","category_en":"Unidentified person","date":"2009-02-06T00:00:00+01:00","timer_basis":"discovery","timer_label":"Tempo dal ritrovamento","timer_label_en":"Time since discovery","location":"Monte Artxanda, Bilbao","location_en":"Mount Artxanda, Bilbao","summary":"Il corpo di una donna fu trovato il 6 febbraio 2009 vicino a un sentiero boschivo sul monte Artxanda, a Bilbao. L’identità resta sconosciuta. La data stimata del decesso è il 3 febbraio 2009.","summary_en":"A woman’s body was found on 6 February 2009 near a forest path on Mount Artxanda in Bilbao. Her identity remains unknown. Her estimated date of death is 3 February 2009.","source":"https://www.interpol.int/What-you-can-do/Identify-Me/Countries-in-which-the-bodies-were-found/Women-found-in-Spain/ES01-The-woman-of-Mount-Artxanda","source_label":"INTERPOL","status":"Identità non accertata","status_en":"Identity unknown"}];
+cases = EMBEDDED_CASES;
+applyText();
+tick();
+setInterval(tick,1000);
+$("year").textContent=new Date().getFullYear();
+</script>
+</body></html>
